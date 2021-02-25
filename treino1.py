@@ -16,13 +16,16 @@ def aloca(prefs):
     alunos = []
     
     for (aluno, lista) in prefs_ordenado:
+        colocado = False
         for projecto in lista:
             if projecto not in alocados:
                 alocados.append(projecto)
-                alunos.append(aluno)
+                colocado = True
+                break
+        if not colocado:
+            alunos.append(aluno)
     
-    alunos_ordenada = [t[0] for t in prefs_ordenado]
-    return [x for x in alunos_ordenada if x not in alunos]
+    return alunos
     
 '''
 Defina uma função que, dada uma lista de nomes de pessoas, devolva essa lista ordenada 
