@@ -234,6 +234,9 @@ contém n repetições de uma determinada palavra
 '''
 
 def repete(palavra,n):
+    if(n == 0):
+        return ''
+        
     iguais = 0
     
     for i in range(len(palavra)):
@@ -243,11 +246,13 @@ def repete(palavra,n):
             break
             
     lista = list(palavra)
-    if iguais != 0:
+    if iguais != 0 and iguais != len(lista):
         del lista[:iguais]
+    elif iguais == len(lista):
+        del lista [:iguais - 1]
         
     sem_iguais = ''.join(lista)
-    return palavra + (sem_iguais * (n - 1)) 
+    return palavra + (sem_iguais * (n - 1))
 
 '''
 Neste problema prentede-se que implemente uma função que calcula o rectângulo onde se movimenta um robot.
