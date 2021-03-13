@@ -30,7 +30,7 @@ def area(p,mapa):
     return len(visitados)
   
   
-  '''
+'''
 
 O objectivo deste problema é determinar quantos movimentos são necessários para 
 movimentar um cavalo num tabuleiro de xadrez entre duas posições.
