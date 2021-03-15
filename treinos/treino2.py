@@ -9,10 +9,10 @@ partir do canto superior esquerdo.
 O robot só consegue movimentar-se na horizontal ou na vertical. 
 
 '''
-# 10%
+# 13%
 
 def area(p,mapa):
-    if mapa[p[1][p[0]] == '*':
+    if mapa[p[1]][p[0]] == '*':
         return 0
         
     queue = [p]
@@ -23,7 +23,7 @@ def area(p,mapa):
         visitados.add((x, y))
         
         for i in [-1, 1]:
-            if 0 <= x + i < len(mapa) and (x + i, y) not in visitados and mapa[y][x + 1] == '.':
+            if 0 <= x + i < len(mapa) and (x + i, y) not in visitados and mapa[y][x + i] == '.':
                 queue.append((x + i, y))
             if 0 <= y + i < len(mapa) and (x, y + i) not in visitados and mapa[y + i][x] == '.':
                 queue.append((x, y + i))
