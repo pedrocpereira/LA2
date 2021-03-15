@@ -12,10 +12,9 @@ O robot só consegue movimentar-se na horizontal ou na vertical.
 # 13%
 
 def area(p,mapa):
-    if mapa[p[1]][p[0]] == '*':
-        return 0
-        
-    queue = [p]
+
+    if mapa[p[1]][p[0]] != '*':
+        queue = [p]
     visitados = set()
     
     while queue:
